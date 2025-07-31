@@ -1,7 +1,7 @@
 .SILENT:
 
 include config.mk
-include demystify.mk
+include replace.mk
 
 OBJS := $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)%.o, $(SRCS))
 DEPS := $(OBJS:.o=.d)
@@ -45,6 +45,7 @@ $(EXEC_DIR):
 
 clean:
 	$(RM_DIR) $(OBJS_DIR)
+	$(RM) files/*.replace
 	echo "$(RED)Cleaning of .o and .d files completed successfully! ／人◕ ‿‿ ◕人＼$(RESET)"
 .PHONY: clean
 
@@ -61,15 +62,15 @@ fclean: clean
 	echo "$(RESET)"
 .PHONY: fclean
 
-launch: all
+test: all
 	echo "$(PURPLE)────────────────────────────────────────────$(RESET)"
-	echo "$(PURPLE)🚀 Launching $(NAME) with args: $(BOLD_UNDERLINE)$(ARGS)$(RESET)"
+	echo "$(PURPLE)🚀 Launching tests(RESET)"
 	echo "$(PURPLE)────────────────────────────────────────────$(RESET)"
-	./$(EXEC) $(ARGS)
+	./test.sh
 	echo "$(GREEN)────────────────────────────────────────────$(RESET)"
 	echo "$(GREEN)✅ Execution of $(NAME) finished! ✨$(RESET)"
 	echo "$(GREEN)────────────────────────────────────────────$(RESET)"
-.PHONY: launch
+.PHONY: test
 
 re: fclean all
 .PHONY: re
