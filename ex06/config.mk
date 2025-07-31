@@ -1,4 +1,4 @@
-NAME            := replace
+NAME            := harlFilters
 EXEC            := exec/$(NAME)
 OBJS_DIR        := .objs/
 EXEC_DIR        := exec/

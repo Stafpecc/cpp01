@@ -1,7 +1,7 @@
 .SILENT:
 
 include config.mk
-include harl.mk
+include harlFilter.mk
 
 OBJS := $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)%.o, $(SRCS))
 DEPS := $(OBJS:.o=.d)

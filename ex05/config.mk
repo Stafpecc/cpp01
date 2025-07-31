@@ -1,4 +1,4 @@
-NAME            := replace
+NAME            := harl
 EXEC            := exec/$(NAME)
 OBJS_DIR        := .objs/
 EXEC_DIR        := exec/
