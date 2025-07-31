@@ -1,6 +1,8 @@
 #ifndef HUMAN_B_HPP
 #define HUMAN_B_HPP
 
+#include "Weapon.hpp"
+
 #include <string>
 
 class HumanB
@@ -9,14 +11,15 @@ class HumanB
 
 		HumanB(std::string name);
 
-		void	attack(std::string name, std::string weapon_type);
+		void	attack();
+		void	setWeapon(Weapon &weapon);
 
 		~HumanB();
 	
 	private:
 
 		std::string	_name;
-		std::string _weapon_type;
+		Weapon*		_weapon;
 };
 
 #endif /* HUMAN_B_HPP */

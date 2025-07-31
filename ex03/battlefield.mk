@@ -2,7 +2,10 @@ override SRC_DIR := srcs
 
 override NAME := battlefield
 
-override DEMYSTIFY_SRC := \
+override BATTLEFIELD_SRC := \
 	main \
+	HumanA \
+	HumanB \
+	Weapon \
 
-override SRCS := $(addprefix $(SRC_DIR)/, $(addsuffix .cpp, $(DEMYSTIFY_SRC)))
+override SRCS := $(addprefix $(SRC_DIR)/, $(addsuffix .cpp, $(BATTLEFIELD_SRC)))
